@@ -1,0 +1,16 @@
+{% extends "layouts/layout.html" %}
+{%block title%}
+Our custom title
+{%endblock%}
+{% block content %}
+
+	
+    <form action="http://localhost:5000/showone/{{id}}/{{oneimg}}/submit" method = "POST">
+  		  X: <input type="text" name="x"><br>
+  		  Y: <input type="text" name="y"><br>
+  		<input type="submit" value="submit">
+	</form>
+		<img src="/{{imgneed}}" alt="{{imgneed}}">
+    	<figcaption>Caption goes here</figcaption>
+
+{% endblock %}

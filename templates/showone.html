@@ -1,0 +1,26 @@
+{% extends "layouts/layout.html" %}
+{%block title%}
+Our custom title
+{%endblock%}
+{% block content %}
+
+	
+    <form action="http://localhost:5000/showone/{{id}}/{{oneimg}}/submit" method = "POST">
+  		  X: <input type="text" name="x"><br>
+  		  Y: <input type="text" name="y"><br>
+  		<input type="submit" value="submit">
+	</form>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+	<script type="text/javascript">
+		$(document).ready(function() {
+    		$("img").on("click", function(event) {
+        		var x = event.pageX - this.offsetLeft;
+        		var y = event.pageY - this.offsetTop;
+        		alert("X Coordinate: " + x + " Y Coordinate: " + y);
+    		});
+		});
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<img id="the_image" src="/static/images/{{id}}/{{oneimg}}" alt="{{oneimg}}"  />
+
+{% endblock %}

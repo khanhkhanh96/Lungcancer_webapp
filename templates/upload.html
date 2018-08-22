@@ -1,0 +1,52 @@
+{% extends "layouts/layout.html" %}
+{%block title%}
+Our custom title
+{%endblock%}
+{% block content %}
+   <body>
+      
+         
+         <div class="col-lg-8 mx-auto">
+            <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+            <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+            <form action = "http://localhost:5000/uploader" method = "POST" enctype = "multipart/form-data">
+         		<input type = "file" name = "file" multiple/>
+              	<div class="control-group">
+                	<div class="form-group floating-label-form-group controls mb-0 pb-2">
+                  		<label>Patient name</label>
+                  		<input class="form-control" id="ptname" name = "ptname" type="text" placeholder="Patient name" required="required" data-validation-required-message="Please enter patient name.">
+                  		<p class="help-block text-danger"></p>
+                	</div>
+              </div>
+              		<div class="control-group">
+               		<div class="form-group floating-label-form-group controls mb-0 pb-2">
+                  		<label>Patient id</label>
+                  		<input class="form-control" id="ptid" name = "ptid" type="text" placeholder="Patient id" required="required" data-validation-required-message="Please enter patient id.">
+                  		<p class="help-block text-danger"></p>
+                	</div>
+             	</div>
+              <div class="control-group">
+                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                  <label>Patient age</label>
+                  <input class="form-control" id="ptage" name ="ptage" type="number" placeholder="Patient age" required="required" data-validation-required-message="Please enter patient age.">
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+              <div class="control-group">
+                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                  <label>Patient gender</label>
+                  <input class="form-control" id="ptgen" name = "ptgen" type="text" placeholder="Patient gender" required="required" data-validation-required-message="Please enter patient gender.">
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+              <br>
+              <div id="success"></div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">Add patient profile</button>
+              </div>
+            </form>
+          </div>
+        </form>
+      
+   </body>
+{% endblock %}

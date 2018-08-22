@@ -1,0 +1,30 @@
+{% extends "layouts/layout.html" %}
+{%block title%}
+Our custom title
+{%endblock%}
+{% block content %}
+	<body>
+	<section class="bg-primary text-white mb-0" id="about">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-white">Patient profile</h2>
+        <hr class="star-light mb-5">
+        <div class="row">
+          <div class="col-lg-4 ml-auto">
+            <p class="lead">Patient name: {{user.ptname}}</p>
+            <p class="lead">Patient id: {{user.ptid}}s</p>
+            <p class="lead">Patient age: {{user.ptage}}</p>
+          </div>
+          <div class="col-lg-4 mr-auto">
+            <p class="lead">Welcome </p>
+          </div>
+        </div>
+      </div>
+    </section>
+		
+	    {% for hist in hists %}
+	    <a href="/showone/{{id}}/{{hist}}">
+	    <img src="/static/images/{{id}}/{{hist}}" alt="{{hist}}">
+	    {% endfor %}
+	</body>
+
+{% endblock %}

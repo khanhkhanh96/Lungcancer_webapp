@@ -1,0 +1,14 @@
+{% extends "layouts/layout.html" %}
+{%block title%}
+Our custom title
+{%endblock%}
+{% block content %}
+
+<form action="{{ url_for('index')}}">
+    <button type="submit">go to home page</button>
+</form>
+<form action="{{ url_for('plot', id=id)}}">
+	<button type="submit">do something now</button>
+</form>
+
+{% endblock %}
