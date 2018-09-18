@@ -1,13 +1,13 @@
 {% extends "layouts/layout.html" %}
 {%block title%}
-Our custom title
+Analyze 
 {%endblock%}
 {% block content %}
 
 	
     <form action="http://localhost:5000/showone/{{id}}/{{oneimg}}/submit" method = "POST">
-  		  X: <input type="text" name="x"><br>
-  		  Y: <input type="text" name="y"><br>
+  		  X: <input type="number" id = "x" name="x"><br>
+  		  Y: <input type="number" id = "y" name="y"><br>
   		<input type="submit" value="submit">
 	</form>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
@@ -16,7 +16,9 @@ Our custom title
     		$("img").on("click", function(event) {
         		var x = event.pageX - this.offsetLeft;
         		var y = event.pageY - this.offsetTop;
-        		alert("X Coordinate: " + x + " Y Coordinate: " + y);
+        		// alert("X Coordinate: " + x + " Y Coordinate: " + y);
+        		document.getElementById("x").value = x
+        		document.getElementById("y").value = y
     		});
 		});
 	</script>

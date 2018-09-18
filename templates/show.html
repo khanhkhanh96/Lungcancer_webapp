@@ -1,9 +1,27 @@
 {% extends "layouts/layout.html" %}
 {%block title%}
-Our custom title
+Your images
 {%endblock%}
 {% block content %}
-	<body>
+<body>
+	<style>
+* {
+    box-sizing: border-box;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+</style>
 	<section class="bg-primary text-white mb-0" id="about">
       <div class="container">
         <h2 class="text-center text-uppercase text-white">Patient profile</h2>
@@ -20,11 +38,18 @@ Our custom title
         </div>
       </div>
     </section>
-		
-	    {% for hist in hists %}
-	    <a href="/showone/{{id}}/{{hist}}">
-	    <img src="/static/images/{{id}}/{{hist}}" alt="{{hist}}">
-	    {% endfor %}
+    <div class="row" style="overflow-y: scroll; height:800px;">
+    	{% for hist in hists %}
+    <div class="column">
+    	<a href="/showone/{{id}}/{{hist}}">
+    	<img src="/static/images/{{id}}/{{hist}}" alt="{{hist}}" >
+		</a>
+    </div>
+   {% endfor %}
+   
+    </div>
+  
+          
 	</body>
 
 {% endblock %}

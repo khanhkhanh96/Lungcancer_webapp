@@ -1,6 +1,6 @@
 {% extends "layouts/layout.html" %}
 {%block title%}
-Our custom title
+Upload page
 {%endblock%}
 {% block content %}
    <body>
@@ -10,6 +10,7 @@ Our custom title
             <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
             <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
             <form action = "http://localhost:5000/uploader" method = "POST" enctype = "multipart/form-data">
+            	<p>upload mhd and raw file, file name must be the same, patient id is file name without extension </p>
          		<input type = "file" name = "file" multiple/>
               	<div class="control-group">
                 	<div class="form-group floating-label-form-group controls mb-0 pb-2">
@@ -18,24 +19,32 @@ Our custom title
                   		<p class="help-block text-danger"></p>
                 	</div>
               </div>
-              		<div class="control-group">
-               		<div class="form-group floating-label-form-group controls mb-0 pb-2">
-                  		<label>Patient id</label>
-                  		<input class="form-control" id="ptid" name = "ptid" type="text" placeholder="Patient id" required="required" data-validation-required-message="Please enter patient id.">
-                  		<p class="help-block text-danger"></p>
-                	</div>
-             	</div>
+              
+              
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                  <label>Patient age</label>
-                  <input class="form-control" id="ptage" name ="ptage" type="number" placeholder="Patient age" required="required" data-validation-required-message="Please enter patient age.">
+                  <label>Date of birth</label>
+                  <input class="form-control" id="ptdob" name = "ptdob" type="text" placeholder="Patient date of birth" required="required" data-validation-required-message="Please enter patient date of birth.">
+                  <p class="help-block text-danger"></p>
+                </div>
+              <div class="control-group">
+                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                  <label>Healthy</label>
+                  <input class="form-control" id="pththy" name ="pththy" type="text" placeholder="Patient healthy" required="required" data-validation-required-message="Please enter patient healthy .">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                  <label>Patient gender</label>
-                  <input class="form-control" id="ptgen" name = "ptgen" type="text" placeholder="Patient gender" required="required" data-validation-required-message="Please enter patient gender.">
+                  <label>Other diseases</label>
+                  <input class="form-control" id="ptdis" name = "ptdis" type="text" placeholder="Other diseases" required="required" data-validation-required-message="Please enter other diseases.">
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+              <div class="control-group">
+                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                  <label>Admitted to hospital</label>
+                  <input class="form-control" id="pttohpt" name = "pttohpt" type="text" placeholder="Admitted to hospital" required="required" data-validation-required-message="Please enter Admitted to hospital.">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
@@ -47,6 +56,7 @@ Our custom title
             </form>
           </div>
         </form>
+       </div>
       
    </body>
 {% endblock %}
